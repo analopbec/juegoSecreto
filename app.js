@@ -1,19 +1,3 @@
-/* document object model (dom). --> puente entre js y html para acceder a los elementos y etiquetas 
-
-let titulo = document.querySelector('h1') 
-perimte acceder a todos los elementos --> h1 es el titulo es decir que asigna una variable al título
-titulo.innerHTML = 'Juego del número secreto'
-let parrafo = document.querySelector('p')
-parrafo.innerHTML = 'Ingresa un número del 1 al 10'
-
-*/
-
-
-// Asignar texto al título y parrafos:
-
-
-
-
 let min = undefined;
 let max = undefined;
 let maximosIntentos = undefined;
@@ -87,17 +71,12 @@ function verificarIntento() {
     console.log(typeof (numeroDeUsuario))
 
     if (numeroDeUsuario == numeroSecreto) {
-        return ganaste()
+        return ganaste();
     } else {
-        if (intento === maximosIntentos) {
-
-            return gameOver();
-        } else {
-        
         
         if (numeroDeUsuario < min || numeroDeUsuario > max) {
-            alert('El numero se encuentra fuera del rango del 1 al 10');
-            }    
+            alert('El numero se encuentra fuera del rango del 1 al 10')
+        }
         else {
             if (numeroDeUsuario < numeroSecreto) {
                 asignarTextoElemento('p', 'El numero secreto es mayor');
@@ -105,18 +84,21 @@ function verificarIntento() {
                 asignarTextoElemento('p', 'El numero secreto es menor');
             }
         }
-        }
+    }
 
     limpiarCaja();
 
-    
+    if (intento === maximosIntentos) {
+
+        gameOver();
+    }
     return;
 
 }
 
 function ganaste(){
     if (listaNumerosSorteados.length === max){
-        return finalizar();
+        finalizar()
     } else {
         asignarTextoElemento('h1', `¡GANASTE!`)
         asignarTextoElemento('p', `¡Has acertado en ${intento} ${intento == 1 ? 'intento' : 'intentos'}!. <br/>El número secreto era: ${numeroSecreto}.<br/> Puedes jugar nuevamente.`)
@@ -164,6 +146,3 @@ function finalizar(){
     document.querySelector('#iniciar').setAttribute('disabled', 'true');
 
 }
-
-
-
