@@ -86,8 +86,8 @@ function verificarIntento() {
     console.log('Coinciden numeros?: ', numeroDeUsuario === numeroSecreto);
     console.log(typeof (numeroDeUsuario))
 
-    if (numeroDeUsuario === numeroSecreto) {
-        ganaste()
+    if (numeroDeUsuario == numeroSecreto) {
+        return ganaste()
     } else {
         if (numeroDeUsuario < min || numeroDeUsuario > max) {
             alert('El numero se encuentra fuera del rango del 1 al 10')
@@ -113,13 +113,14 @@ function verificarIntento() {
 
 function ganaste(){
     if (listaNumerosSorteados.length === max){
-        finalizar()
+        return finalizar();
     } else {
         asignarTextoElemento('h1', `¡GANASTE!`)
         asignarTextoElemento('p', `¡Has acertado en ${intento} ${intento == 1 ? 'intento' : 'intentos'}!. <br/>El número secreto era: ${numeroSecreto}.<br/> Puedes jugar nuevamente.`)
         document.querySelector('#reiniciar').removeAttribute('disabled');
         document.querySelector('#iniciar').setAttribute('disabled', 'true');
     }
+    limpiarCaja();
 }
 
 
