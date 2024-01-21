@@ -92,6 +92,7 @@ function verificarIntento() {
 
         return gameOver();
     }
+    return; 
 
 }
 
