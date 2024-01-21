@@ -90,9 +90,8 @@ function verificarIntento() {
 
     if (intento === maximosIntentos) {
 
-        gameOver();
+        return gameOver();
     }
-    return;
 
 }
 
