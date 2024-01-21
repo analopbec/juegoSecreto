@@ -5,13 +5,13 @@ let intento = 0;
 let numeroSecreto = 0;
 let listaNumerosSorteados = [];
 
-/*
+
 document.addEventListener('DOMContentLoaded', function() {
     // Una vez que el DOM esté completamente cargado, habilita el botón "iniciar"
    document.querySelector('#iniciar').removeAttribute('disabled');
 
 });
-*/
+
 
 function asignarTextoElemento(elemento, texto) {
     let titulo = document.querySelector(elemento);
