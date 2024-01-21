@@ -89,9 +89,15 @@ function verificarIntento() {
     if (numeroDeUsuario == numeroSecreto) {
         return ganaste()
     } else {
+        if (intento === maximosIntentos) {
+
+            return gameOver();
+        } else {
+        
+        
         if (numeroDeUsuario < min || numeroDeUsuario > max) {
-            alert('El numero se encuentra fuera del rango del 1 al 10')
-        }
+            alert('El numero se encuentra fuera del rango del 1 al 10');
+            }    
         else {
             if (numeroDeUsuario < numeroSecreto) {
                 asignarTextoElemento('p', 'El numero secreto es mayor');
@@ -99,14 +105,11 @@ function verificarIntento() {
                 asignarTextoElemento('p', 'El numero secreto es menor');
             }
         }
-    }
+        }
 
     limpiarCaja();
 
-    if (intento === maximosIntentos) {
-
-        gameOver();
-    }
+    
     return;
 
 }
